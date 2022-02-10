@@ -54,6 +54,10 @@ if (! is_int($maxPlayers) || $maxPlayers < 2 || $maxPlayers > 12) {
   error_response('Le nombre maximum de joueurs doit être compris entre 2 et 12');
 }
 
+if ($minPlayers >= $maxPlayers) {
+  error_response('Le nombre minimum de joueurs doit être inférieur au nombre maximum renseigné');
+}
+
 $levels = array("facile", "normal", "difficile");
 // $niveau = (string)($_POST['niveau'] ?? "Normal");
 $niveau = (string)($_POST['niveau']);
